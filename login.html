@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="fonts/iconfont.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/t004.css">
+
+  <!-- Swiper JS -->
+  <script src="js/t004.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <style>
+    .swiper {
+      width: 240px;
+      height: 320px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+
+    /* 盒子设背景 */
+    .pic {
+      width: 240px;
+      height: 320px;
+    }
+
+    .main {
+      width: 1000px;
+      height: 600px;
+      margin: 40px auto;
+      background: url(images/cloth.png) no-repeat;
+      box-shadow: 0 0 20px 0;
+      background-size: cover;
+      position: relative;
+    }
+
+    .pk {
+      position: absolute;
+      top: 30px;
+      left: 50px;
+    }
+
+    .pk h1 {
+      margin-bottom: 15px;
+    }
+    
+
+    .main{
+      margin-top: 100px;
+      color: #000;
+    }
+    .main a:hover{
+      color: rgb(228, 143, 32);
+    }
+    .agree  a{
+     color: rgb(212, 179, 14);
+    }
+    .btn a{
+      color: #e73541;
+    }
+    .tab-nav a.code{
+      color: rgb(191, 61, 61);
+    }
+    .pk h1{
+      font-size: 40px;
+      margin-bottom: 40px;
+      font-family: 'ttf1';
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 1顶层导航 -->
+  <div class="nav">
+    <div class="info container">
+      <div class="logo"><a href=""><img src="img/logo.png" alt=""></a></div>
+      <div class="content">
+        <ul class="topsec">
+          <li class="sec"><a href="index.html">首页</a></li>
+          <li class="sec">
+            <div>
+              <a href="">游戏中心</a>
+              <span class="iconfont">&#xe859;</span>
+            </div>
+            <!-- 二级菜单 -->
+            <ul class="secnav">
+              <li><a href="">热门游戏</a></li>
+              <li><a href="">角色扮演</a></li>
+              <li><a href="">塔防</a></li>
+              <li><a href="">悠闲</a></li>
+              <li><a href="">卡牌</a></li>
+
+            </ul>
+          </li>
+          <li class="sec">
+            <div>
+              <a href="">文化社区</a>
+              <span class="iconfont">&#xe859;</span>
+            </div>
+            <!-- 二级菜单 -->
+            <ul class="secnav">
+              <li><a href="wanzhe.html">王者荣耀</a></li>
+              <li><a href="">和平精英</a></li>
+              <li><a href="">洛克王国</a></li>
+              <li><a href="">逃跑吧少年</a></li>
+              <li><a href="">原神</a></li>
+
+            </ul>
+          </li>
+          <script>
+            $('.sec').hover(function () {
+              $(this).find('.secnav').stop();
+              $(this).find('.secnav').slideDown();
+
+            }, function () {
+              $(this).find('.secnav').stop();
+              $(this).find('.secnav').slideUp();
+            });
+
+
+          </script>
+
+          <li class="sec"><a href="game.html">创作者计划</a></li>
+          <li class="sec"><a href="mygame.html">我的游戏</a></li>
+        </ul>
+      </div>
+      <div class="login"><a href="login.html">登录</a>
+      </div>
+      <div class="download"><button>下载客户端</button></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="form">
+      <form action="">
+        <div class="tab-nav">
+          <a href="" class="shuru active">账户登录</a>
+          <a href="" class="code">扫码登录</a>
+        </div>
+        <div class="tab-pane">
+          <div class="tab-pane2">
+            <figure>
+              <figcaption>
+                <h4>请打开微信点击扫一扫</h4>
+              </figcaption>
+            </figure>
+            <caption>
+              <div class="code-content"><img src="uploads/R-C.jpg" alt=""></div>
+            </caption>
+          </div>
+          <div class="tab-pane1">
+            <div class="user clearfix">
+              <label for="" class="icon-user"></label>
+              <input type="text" name="username" placeholder="用户名" required>
+              <span class="hidden"></span>
+            </div>
+            <div class="pwd clearfix">
+              <label for="" class="icon-pwd"></label>
+              <input type="password" name="userpwd" placeholder="密码" required>
+              <span class="hidden"></span>
+            </div>
+            <div class="agree">
+              <label for=""><input type="checkbox" class="remember"></label>
+              我已同意<a href="javascript:;">《服务条款》</a>和<a href="javascript:;">《用户协议》</a>
+              <span class="hidden">请勾选同意</span>
+            </div>
+            <div class="btn clearfix">
+              <input type="submit" value="登录" onclick="return verify()">
+              <a href="javascript" class="fl">忘记密码？</a>
+              <a href="register.html" class="fr">立即注册</a>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+      </form>
+    </div>
+    <script>
+      document.querySelector('.tab-nav .shuru').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('.tab-nav .active').classList.remove('active')
+        this.classList.add('active')
+        $(document.querySelector('.tab-pane2')).hide()
+        $(document.querySelector('.tab-pane1')).show()
+      })
+      document.querySelector('.tab-nav .code').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('.tab-nav .active').classList.remove('active')
+        this.classList.add('active')
+        $(document.querySelector('.tab-pane1')).hide()
+        $(document.querySelector('.tab-pane2')).show()
+      })
+    </script>
+    <!-- 左上角的扑克 -->
+    <div class="pk">
+      <h1>欢迎来到999游戏助手</h1>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="pic pic1"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic2"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic3"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic4"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic5"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic6"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic7"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic8"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="pic pic9"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let pics = document.querySelectorAll(".pic")
+    for (let i = 0; i < pics.length; i++) {
+      console.log(pics[i]);
+      pics[i].style.background = ` url(images/pk.png) ${-56}px ${-55 - 755 * i}px`;
+    }
+  </script>
+
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "cards",
+      grabCursor: true,
+    });
+  </script>
+
+  <script>
+    //验证格式
+    let flag = 0;//通行证
+    let f1 = 0, f2 = 0, f3 = 0;
+    let username = document.querySelector('input[type=text]')
+    let password = document.querySelector('input[type=password]')
+    let checkbox = document.querySelector('input[type=checkbox]')
+    let ucheck = document.querySelector('.tab-pane .user span')
+    let pcheck = document.querySelector('.tab-pane .pwd span')
+    let acheck = document.querySelector('.tab-pane .agree span')
+    username.addEventListener('blur', function () {
+      if (username.value === '') {
+        ucheck.innerHTML = '不是有效的用户名'
+        f1 = 0
+        ucheck.classList.add('show')
+        return
+      }
+      ucheck.classList.remove('show')
+      f1 = 1
+    })
+    password.addEventListener('blur', function () {
+      if (this.value < 6) {
+        pcheck.innerHTML = '密码长度不能少于6位'
+        pcheck.classList.add('show')
+        f2 = 0
+        return
+      }
+      pcheck.classList.remove('show')
+      f2 = 1
+    })
+    checkbox.addEventListener('click', function () {
+      if (checkbox.checked) {
+        acheck.classList.remove('show')
+      }
+    })
+    function verify() {
+      if (!checkbox.checked) {
+        acheck.classList.add('show')
+      }
+      else {
+        if (f1 == 1 && f2 == 1) {
+          localStorage.setItem('username', username.value)
+          localStorage.setItem('password', password.value)
+          alert('登录成功')
+          window.location.href = 'index.html'
+          // return true;
+        }
+      }
+      return false
+    }
+  </script>
+   <!-- 6Footer -->
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section about-us">
+            <h3>关于我们</h3>
+            <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+        </div>
+        <div class="footer-section contact-us">
+            <h3>联系我们</h3>
+            <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+                <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+            </ul>
+        </div>
+        <div class="footer-section follow-us">
+            <h3>关注我们</h3>
+            <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-section copyright">
+            <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

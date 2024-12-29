@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>999游戏助手 - 游戏中心</title>
+    <meta name="description" content="一个很好玩的游戏助手，提供游戏下载，游戏攻略，游戏社区，游戏评测，游戏直播等服务。">
+    <meta name="keywords" content="好玩">
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="package/css/swiper.min.css">
+
+    <!-- 引入jQuery库，用于简化JavaScript操作 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 游戏分类筛选功能
+            $('.filter-bar button').click(function () {
+                $('.filter-bar button').removeClass('active');
+                $(this).addClass('active');
+                var category = $(this).data('category');
+                console.log(category);
+
+                if (category === 'all') {
+                    $('.game-card').show();
+                } else {
+                    $('.game-card').hide();
+                    $('.' + category).show();
+                }
+            });
+
+            // 游戏卡片点击显示详情功能
+            $('.game-card').click(function () {
+                var gameTitle = $(this).find('h3').text();
+                var gameDescription = $(this).find('p').text();
+                var gameImage = $(this).find('img').attr('src');
+                $('#game-modal-title').text(gameTitle);
+                $('#game-modal-description').text(gameDescription);
+                $('#game-modal-image').attr('src', gameImage);
+                $('.modal').show();
+            });
+
+            // 关闭游戏详情模态框功能
+            $('.close').click(function () {
+                $('.modal').hide();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 1顶层导航 -->
+    <div class="nav">
+        <div class="info container">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+            <div class="content">
+                <ul class="topsec">
+                    <li class="sec"><a href="index.html">首页</a></li>
+                    <li class="sec">
+                        <div>
+                            <a href="">游戏中心</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="">热门游戏</a></li>
+                            <li><a href="">角色扮演</a></li>
+                            <li><a href="">塔防</a></li>
+                            <li><a href="">悠闲</a></li>
+                            <li><a href="">卡牌</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sec">
+                        <div>
+                            <a href="">文化社区</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="wanzhe.html">王者荣耀</a></li>
+                            <li><a href="">和平精英</a></li>
+                            <li><a href="">洛克王国</a></li>
+                            <li><a href="">逃跑吧少年</a></li>
+                            <li><a href="ys.html">原神</a></li>
+
+                        </ul>
+                    </li>
+                    <script>
+                        $('.sec').hover(function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideDown();
+
+                        }, function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideUp();
+                        });
+
+
+                    </script>
+
+                    <li class="sec"><a href="game.html">创作者社区</a></li>
+                    <li class="sec"><a href="mygame.html">我的游戏</a></li>
+                </ul>
+            </div>
+            <div class="login"><a href="login.html">登录</a>
+
+            </div>
+            <div class="download"><button>下载客户端</button></div>
+        </div>
+    </div>
+    <!-- 登录 -->
+    <script>
+        document.querySelector(".login a").innerHTML = localStorage.getItem("username") || "登录";
+    </script>
+    <!-- 2轮播图 -->
+    <div class="banner container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+             
+                <div class="swiper-slide">
+                    <img src="uploads/topbanner(1).jpeg">
+                    <div class="slide-content">
+                        <h2> 金铲铲之战</h2>
+                        <h3>《云顶之弈》正版授权手游</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="uploads/topbanner(2).jpeg">
+                    <div class="slide-content">
+                        <h2>重构：阿塔提斯</h2>
+                        <h3>即刻开构，抱团塔塔</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="uploads/topbanner(3).jpeg">
+                    <div class="slide-content">
+                        <h2>火柴人联盟3</h2>
+                        <h3>火柴人横版动作三代续作</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="uploads/topbanner(4).jpeg">
+                    <div class="slide-content">
+                        <h2>航海王：壮志雄心</h2>
+                        <h3>航海王3D格斗手游</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+    </div>
+
+    <script src="package/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            speed: 500,
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,//必须
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <!-- 引入jQuery库，用于简化JavaScript操作 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 轮播图自动切换函数
+            function carousel() {
+                var current = $('.carousel img.active');
+                var next = current.next().length ? current.next() : $('.carousel img').first();
+                current.removeClass('active').fadeOut(500);
+                next.addClass('active').fadeIn(500);
+                setTimeout(carousel, 3000); // 每3秒切换一次
+            }
+            carousel();
+        });
+    </script>
+    <!-- 3热门游戏 -->
+    <div class="container hot">
+        <h2>热门游戏</h2>
+        <div class="hot-list">
+            <ul>
+                <li>
+                    <img src="uploads/hp.png" alt="">
+                    <div class="bo">
+                        <div class="js">和平精英</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">《和平精英》是腾讯光子工作室群自研打造的战术竞技类手机游戏，于2019年5月8日正式公开测试.
+                        玩家在多张实景还原地图中扮演特种兵，通过跳伞进入游戏地图，收集武器、装备等资源，与其他特种兵较量，可通过击倒、击杀等方式淘汰对手，最终存活的特种兵所在小队获胜.
+                        游戏具有精美的画面、真实的射击手感，还有多种地图、丰富的模式和特色玩法，团队合作至关重要，同时它也是一个社交平台，玩家可在此结识朋友，交流心得.
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/wz.jpeg" alt="">
+                    <div class="bo">
+                        <div class="js">王者荣耀</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《王者荣耀》是一款极具影响力的多人在线竞技手游。通过摧毁对方的水晶来获取胜利。游戏不仅考验个人操作技巧，更注重团队协作与策略规划，包括英雄的选择搭配、兵线的运营推进、野怪的控制等诸多环节。同时，《王者荣耀》还拥有精美的皮肤系统，能让英雄们换上风格多样的外观，无论是霸气威武的机甲造型，还是清新可爱的童话风格，都为玩家带来丰富的视觉体验。并且，官方会定期更新游戏内容，推出新英雄、新皮肤和新玩法，让游戏始终保持新鲜感和吸引力。
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/ys.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">原神</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《原神》是由米哈游开发的一款开放世界冒险角色扮演游戏，于2020年9月28日公测并全球同步上线.游戏发生在名为“提瓦特”的幻想世界，被神选中的人会被授予“神之眼”以导引元素之力，玩家扮演的旅行者将在此寻找失散的亲人.游戏有开放世界探索、角色养成与抽卡、元素战斗等丰富玩法，玩家可操控不同属性角色进行战斗，利用元素反应提升效率，还能通过抽卡等收集角色和武器来提升实力.其画面精美，采用卡通风格渲染，剧情丰富，凭借独特设定和玩法在全球吸引了大量玩家，并获得多个奖项.
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/nsh.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">逆水寒</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《逆水寒》是由杭州网易雷火科技有限公司开发运营的武侠题材网络游戏，于2018年6月29日开启不限号不删档内测
+                        。游戏主线围绕北宋末年的血腥大追捕展开，展现了江湖恩怨、朝堂纷争、市井百态等生活画卷.《逆水寒》采用时间点卡收费模式，拥有半锁定的即时战斗系统，玩家可自由选择职业和角色属性，通过多种方式提升角色技能，并可参与探索、生活、奇遇等特色玩法.该游戏以其精美的画面、丰富的剧情和深度的玩法，获得了2019年和2021年的金翎奖年度玩家最喜爱的网络游戏等多项荣誉.
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        $(".hot li").hover(function () {
+            $(this).find(".mask").stop();
+            $(this).find(".mask").slideDown(200);
+        }, function () {
+            $(this).find(".mask").stop();
+            $(this).find(".mask").slideUp(200);
+        });
+    </script>
+
+
+    <!-- 4筛选栏 -->
+    <div class="container select">
+        <div class="filter-bar">
+            <button class="active cl" data-category="all">全部</button>
+            <button data-category="role-playing">角色扮演</button>
+            <button data-category="shooting-game">射击游戏</button>
+            <button data-category="casual-puzzle">休闲益智</button>
+            <button data-category="strategy-management">策略经营</button>
+        </div>
+    </div>
+    <script>
+        // document.querySelector('.filter-bar list').addEventListener('click', function () {
+        // })
+    </script>
+
+
+    <!-- 5游戏列表展示部分 -->
+    <div class="container display">
+        <div class="game-list">
+            <!-- 角色扮演类游戏卡片示例 -->
+            <div class="game-card role-playing">
+                <img src="uploads/game(3).jpg" alt="角色扮演游戏1图片">
+                <h3>奇幻之旅</h3>
+                <p>开启一段奇幻的角色扮演冒险，体验丰富剧情！</p>
+            </div>
+            <div class="game-card role-playing">
+                <img src="uploads/game(5).jpg" alt="角色扮演游戏2图片">
+                <h3>勇者传说</h3>
+                <p>扮演勇者，拯救世界，超多技能等你来解锁！</p>
+            </div>
+
+            <!-- 射击游戏类游戏卡片示例 -->
+            <div class="game-card shooting-game">
+                <img src="uploads/game(4).jpg" alt="射击游戏1图片">
+                <h3>反恐行动</h3>
+                <p>紧张刺激的射击对战，多种武器任你选！</p>
+            </div>
+            <div class="game-card shooting-game">
+                <img src="uploads/game(1).jpg" alt="射击游戏2图片">
+                <h3>星际枪战</h3>
+                <p>在星际战场展开激烈枪战，体验科幻射击乐趣！</p>
+            </div>
+
+            <!-- 休闲益智类游戏卡片示例 -->
+            <div class="game-card casual-puzzle">
+                <img src="uploads/game(6).jpg" alt="休闲游戏1图片">
+                <h3>水果消消乐</h3>
+                <p>轻松有趣的消除游戏，打发闲暇时光！</p>
+            </div>
+            <div class="game-card casual-puzzle">
+                <img src="uploads/game(2).jpg" alt="休闲游戏2图片">
+                <h3>数字拼图</h3>
+                <p>锻炼大脑的数字拼图游戏，挑战你的思维！</p>
+            </div>
+
+            <!-- 策略经营类游戏卡片示例 -->
+            <div class="game-card strategy-management">
+                <img src="uploads/game(8).jpg" alt="策略游戏1图片">
+                <h3>帝国崛起</h3>
+                <p>打造属于你的帝国，策略规划发展路线！</p>
+            </div>
+            <div class="game-card strategy-management">
+                <img src="uploads/game(7).jpg" alt="策略游戏2图片">
+                <h3>城市建设者</h3>
+                <p>规划城市布局，建设繁荣都市，体验经营乐趣！</p>
+            </div>
+            <div class="game-card strategy-management">
+                <img src="uploads/game(7).jpg" alt="策略游戏2图片">
+                <h3>城市建设者</h3>
+                <p>规划城市布局，建设繁荣都市，体验经营乐趣！</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 游戏详情模态框 -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="game-modal-image" src="" alt="游戏详情图片" style="width: 100%;">
+            <h2 id="game-modal-title"></h2>
+            <p id="game-modal-description"></p>
+        </div>
+    </div>
+
+    <!-- 6Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <h3>关于我们</h3>
+                <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>联系我们</h3>
+                <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+                    <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section follow-us">
+                <h3>关注我们</h3>
+                <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

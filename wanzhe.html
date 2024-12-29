@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="fonts/iconfont.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/t005.css" />
+  <script src="js/t005.js"></script>
+  <style>
+    .wzjs {
+      margin-top: 60px;
+    }
+
+    .title {
+      font-family: 'ttf3';
+      color: rgb(241, 194, 38);
+      background-color: brown;
+    }
+
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mySwiper2 {
+      height: 80%;
+      width: 100%;
+    }
+
+    .mySwiper {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .mySwiper .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fa {
+      width: 800px;
+      height: 500px;
+    }
+    /* 3pf */
+    .pf{
+      position: relative;
+    }
+    .pf-details{
+      position: absolute;
+      right: 50px;
+      top: 100px;
+      width: 300px;
+      height: 100px;
+      /* background-color: ccc; */
+      text-align: center;
+    } 
+    .pf-details h1{
+      font-size: 40px;
+      color: rgb(224, 22, 99);
+      font-family: 'ttf4';
+      text-shadow: 4px 4px 1px  rgb(137, 26, 26);
+   
+    }
+    .pf-details p{
+      font-size: 20px;
+      font-family: 'ttf3';
+    }
+/* 4cos */
+    .cos ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cos li {
+      width: 250px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin-right: 20px;
+      position: relative;
+    }
+
+    .cos li img {
+      width: 250px;
+      height: 300px;
+    }
+    .cos-content .m-txt{
+      width: 250px;
+      height: 40px;
+      margin-top: 20px;
+      position: relative;
+      /* background-color: pink; */
+      line-height: 40px;
+      font-size: 40px;
+      text-align: center;
+      font-family: 'ttf2';
+      /* display: none; */
+      color: brown;
+    }
+   
+    .cos-content li:hover .m-txt {
+      display: block;
+    }
+
+    .cos .cos-bottom {
+      height: 500px;
+      /* background-color: rgba(255, 0, 0, 0.5); */
+      background: url(uploads/wzbg\(1\).jpeg) no-repeat;
+      background-size: cover;
+    }
+
+    .cos .cos-bottom .focus {
+      width: 400px;
+      height: 400px;
+      margin: 100px auto;
+      padding-top: 130px;
+      padding-left: 50px;
+      /* background-color: pink; */
+    }
+
+
+    #scene {
+      width: 300px;
+      height: 300px;
+      transform-style: preserve-3d;
+
+      /* transform: rotateX(30deg) rotateY(45deg); */
+      transition: transform 0.1s;
+    }
+
+    .face {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #scene  .front {
+      transform: translateZ(100px);
+    }
+
+    #scene  .back {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    #scene  .right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    #scene  .left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+/* 高手 */
+    /* .gs-content ul {
+      
+    } */
+    .gs-content ul li{
+      background-color: rgb(141, 179, 59);
+      display: flex;
+      margin: 10px 0;
+      height: 300px;
+    }
+    .gs-content ul li .left{
+      width: 400px;
+      height: 300px;
+      background-color: rgb(244, 115, 115);
+      margin-right: 20px;
+    }
+    .gs-content ul li .right{
+      width: 700px;
+      height: 300px;
+    }
+    .gs-content ul li .right h4{
+      text-align: center;
+      font-family: '楷体';
+      color: rgb(241, 194, 38);
+      font-size: 30px;
+    }
+    .gs-content ul li video{
+      padding: 10px;
+      width: 350px;
+      height: 280px;
+    }
+
+ 
+  </style>
+</head>
+
+<body>
+  <!-- 1顶层导航 -->
+  <div class="nav">
+    <div class="info container">
+      <div class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+      <div class="content">
+        <ul class="topsec">
+          <li class="sec"><a href="index.html">首页</a></li>
+          <li class="sec">
+            <div>
+              <a href="">游戏中心</a>
+              <span class="iconfont">&#xe859;</span>
+            </div>
+            <!-- 二级菜单 -->
+            <ul class="secnav">
+              <li><a href="">热门游戏</a></li>
+              <li><a href="">角色扮演</a></li>
+              <li><a href="">塔防</a></li>
+              <li><a href="">悠闲</a></li>
+              <li><a href="">卡牌</a></li>
+
+            </ul>
+          </li>
+          <li class="sec">
+            <div>
+              <a href="">文化社区</a>
+              <span class="iconfont">&#xe859;</span>
+            </div>
+            <!-- 二级菜单 -->
+            <ul class="secnav">
+              <li><a href="">王者荣耀</a></li>
+              <li><a href="">和平精英</a></li>
+              <li><a href="">洛克王国</a></li>
+              <li><a href="">逃跑吧少年</a></li>
+              <li><a href="">原神</a></li>
+
+            </ul>
+          </li>
+          <script>
+            $('.sec').hover(function () {
+              $(this).find('.secnav').stop();
+              $(this).find('.secnav').slideDown();
+
+            }, function () {
+              $(this).find('.secnav').stop();
+              $(this).find('.secnav').slideUp();
+            });
+
+
+          </script>
+
+          <li class="sec"><a href="game.html">创作者计划</a></li>
+          <li class="sec"><a href="mygame.html">我的游戏</a></li>
+        </ul>
+      </div>
+      <div class="login"><a href="login.html">登录</a>
+
+      </div>
+      <div class="download"><button>下载客户端</button></div>
+    </div>
+  </div>
+  <!-- 登录 -->
+  <script>
+    document.querySelector(".login a").innerHTML = localStorage.getItem("username") || "登录";
+  </script>
+  <!-- 2 -->
+  <div class="container wzjs">
+    <h1 class="title">游戏介绍</h1>
+    <div class="wzjs-content">
+      <p>《王者荣耀》是腾讯开发的国民级 MOBA 手游，自 2015 年发布以来风靡全球，吸引了数以亿计的玩家。游戏中，玩家可从多种风格各异、技能独特的英雄里选择，如战士、法师、刺客、射手、辅助等，来组成 5V5
+        团队进行公平对战，目标是摧毁敌方基地并保护己方基地. 其拥有众多精彩对战模式，像经典的王者峡谷、节奏更快的长坂坡之战、单挑的墨家机关道，还有火焰山大战、克隆大作战等娱乐玩法.
+        游戏画面制作精良，场景和英雄设计精美，搭配激昂背景音乐和逼真音效，带来视觉和听觉享受，且 10
+        秒实时跨区匹配、强大社交功能以及频繁更新优化等特点，让玩家能随时与好友开黑，共同体验竞技乐趣，增进友谊，使其成为许多人生活中不可或缺的一部分.</p>
+    </div>
+  </div>
+  <!-- 3皮肤展示 -->
+  <div class="container pf">
+    <h1 class="title">皮肤展示</h1>
+    <div class="pf-content">
+      <div class="fa">
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="uploads/pf(1).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(2).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(3).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(4).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(5).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(6).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(7).jpg" />
+            </div>
+
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="uploads/pf(1).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(2).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(3).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(4).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(5).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(6).jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="uploads/pf(7).jpg" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script>
+      window.addEventListener('click',function(){
+        //  let slide=document.querySelector('.swiper-wrapper .swiper-slide');
+        //  console.log(slide.dataset);
+        //  data-swiper-slide-index
+        console.log($('.swiper-wrapper .swiper-slide'));
+        
+         
+      })
+      
+    </script>
+    <div class="pf-details ">
+      <h1>问璇玑</h1>
+      <p>·孙尚香·</p>
+    </div>
+  </div>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+
+  </script>
+  <!-- 4 -->
+  <div class="container cos">
+    <h1 class="title">COS展示</h1>
+    <div class="cos-content">
+      <ul>
+        <li>
+          <img src="uploads/cos(1).webp" alt="">
+          <div class="m-txt">祈雪灵祝</div>
+        </li>
+        <li><img src="uploads/cos(2).webp" alt="">
+          <div class="m-txt">幻灵魅影</div>
+        </li>
+        <li>
+          <img src="uploads/cos(3).webp" alt="">
+          <div class="m-txt">游龙清影</div>
+        </li>
+        <li>
+          <img src="uploads/cos(1).jpeg" alt="">
+          <div class="m-txt">时之魔女</div>
+        </li>
+      </ul>
+    </div>
+    <div class="cos-bottom">
+      <div class="focus">
+        <div id="scene">
+          <div class="face front" style="background-image: url('uploads/lft-tp (1).webp');"></div>
+          <div class="face back" style="background-image: url('uploads/lft-tp (2).webp');"></div>
+          <div class="face right" style="background-image: url('uploads/lft-tp (3).webp');"></div>
+          <div class="face left" style="background-image: url('uploads/lft-tp (4).webp');"></div>
+          <div class="face top" style="background-image: url('uploads/lft-tp (5).webp');"></div>
+          <div class="face bottom" style="background-image: url('uploads/lft-tp (1).jpg');"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 立方体 -->
+  <script>
+    const scene = document.getElementById('scene');
+    let isDragging = false;
+    let startX, startY;
+    let currentX = -45;
+    let currentY = -30;
+
+    scene.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      startX = event.clientX;
+      startY = event.clientY;
+    });
+
+    scene.addEventListener('touchstart', (event) => {
+      if (event.touches.length === 1) {
+        isDragging = true;
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+      }
+    });
+
+    document.addEventListener('mousemove', (event) => {
+      if (!isDragging) return;
+      const deltaX = event.clientX - startX;
+      const deltaY = event.clientY - startY;
+      currentX += deltaX * 0.2;
+      currentY += deltaY * 0.2;
+      scene.style.transform = `rotateX(${currentY}deg) rotateY(${currentX}deg)`;
+      startX = event.clientX;
+      startY = event.clientY;
+    });
+
+    document.addEventListener('touchmove', (event) => {
+      if (!isDragging || event.touches.length !== 1) return;
+      const deltaX = event.touches[0].clientX - startX;
+      const deltaY = event.touches[0].clientY - startY;
+      currentX += deltaX * 0.2;
+      currentY += deltaY * 0.2;
+      scene.style.transform = `rotateX(${currentY}deg) rotateY(${currentX}deg)`;
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    document.addEventListener('mouseleave', () => {
+      isDragging = false;
+    });
+  </script>
+   <!-- 5 -->
+   <div class="container gs">
+    <h1 class="title">糕手</h1>
+    <div class="gs-content">
+        <ul>
+          <li>
+            <div class="left">
+              <video src="video/video_wz(3).mp4"  controls ></video>
+            </div>
+            <div class="right">
+              <h4>青莲</h4>
+              <p>王者荣耀主播青莲，被誉为国服第一兰陵王，他并非一开始就技艺精湛，而是通过不断努力练习，熟悉各英雄技能特点，积累经验，逐渐成长为实力出众的玩家. 他对兰陵王的理解和操作达到极高水平，创造出闪现边路兰陵王打法，在游戏中屡创佳绩，带领团队获得全国性比赛冠军，知名度大增. 其直播风格独特，以沉浸式讲解深受观众喜爱，与忘川又下饭啦组成的“德云色”CP组合，配合默契，直播时幽默风趣，吸粉无数. 此外，他还积极分享经验技巧，帮助其他玩家提高技术，并参与公益活动，传递正能量，成为众多玩家心目中的楷模.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="left"><video src="video/video_wz(4).mp4" controls></video></div>
+            <div class="right">
+              <h4>桑杰</h4>
+              <p>桑杰是一位知名的王者荣耀主播，在快手平台拥有较高人气，其抖音平台粉丝数截至2024年12月20日已达634.8万 。他是王者荣耀五国服同时在榜元歌，也是全网第一个两万分元歌，曾用元歌上过巅峰赛第一. 2021年，桑杰与听安共同创建王者荣耀花果山战队，并出任队长，后队长位置由听安担任. 桑杰直播风格风趣幽默，给很多英雄都起了外号，还常与队友相爱相杀，节目效果拉满，并且三观正，积极引导粉丝，不搞剧本不蹭热度，曾将单挑赢的几万块当场捐出，被评价为“至少目前来说是直播四年没黑历史的主播”.</p>
+            </div>
+          </li>
+          <li>
+            <div class="left"><video src="video/video_wz(5).mp4" controls></video></div>
+            <div class="right">
+              <h4>宇晨</h4>
+              <p>王者荣耀主播宇晨是一位备受关注的游戏主播，他凭借着对马可波罗这一角色的精湛操作，被誉为“王者荣耀中的第一马可波罗”，其操作手法细致，即使在游戏局势不利的情况下，也能冷静操作实现逆风翻盘. 宇晨不仅游戏技术强悍，还会在直播中分享马可波罗的操作技巧、出装和铭文搭配等，被大家称为“马可导师”， 他曾拿到过王者荣耀年度主播的荣誉. 此外，他的直播间氛围欢快，经常在线整活，还会使用各种好听的背景音乐，如《wake》《深海回响》等，深受玩家们的喜爱.</p>
+            </div>
+          </li>
+          <li>
+            <div class="left"><video src="video/video_wz(6).mp4" controls></video></div>
+            <div class="right">
+              <h4>宗师</h4>
+              <p>王者荣耀主播宗师是一位技术过硬的主播，在国服镜榜单中属于顶尖水平，与“离开”等主播同属镜天花板级别 ，其对镜有着独特的理解和高超的操作技巧 。他是抖音平台较稳定的头部王者主播之一，所属工会实力强劲且营销能力强，人气一直较高，平均人气能达到1.8万左右，在王者主播中礼物流水也较为突出 。不过，他也存在一些争议，如有玩家指责其存在卡分、请演员以及摆烂等行为.</p>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+   <!-- 6 -->
+   <div class="container jszb">
+    <h1 class="title">技术煮波</h1>
+    <div class="gs-content">
+        <ul>
+          <li>
+            <div class="left">
+              <video src="video/video_wz(1).mp4"  controls ></video>
+            </div>
+            <div class="right">
+              <h4>吕德华</h4>
+              <p>吕德华是虎牙直播的签约主播，也是虎牙王者荣耀板块的头部主播之一，被称为“虎牙二哥”. 他擅长使用吕布等英雄，曾与赖神并称为“龙虎双边”，有着较高的游戏水平，但后期转型为娱乐主播，以独特的“守家艺术”、搞笑的直播风格和众多名场面而闻名，其直播间人气高涨. 2020年，他因举报景慧请演员一事引发关注，知名度大增. 此外，他还创建了战队“神鸡营”，要求巅峰赛分数至少2100才能进入.. 他对兰陵王的理解和操作达到极高水平，创造出闪现边路兰陵王打法，在游戏中屡创佳绩，带领团队获得全国性比赛冠军，知名度大增. 其直播风格独特，以沉浸式讲解深受观众喜爱，与忘川又下饭啦组成的“德云色”CP组合，配合默契，直播时幽默风趣，吸粉无数. 此外，他还积极分享经验技巧，帮助其他玩家提高技术，并参与公益活动，传递正能量，成为众多玩家心目中的楷模.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="left"><video src="video/video_wz(2).mp4" controls></video></div>
+            <div class="right">
+              <h4>铁根</h4>
+              <p>王者荣耀主播铁根是一位来自山东的游戏领域自媒体创作者，在虎牙等平台直播.他以幽默生动且自然的解说风格而闻名，常在解说中加入恶搞成分，让观众在观看游戏解说时能开怀大笑，其素质高、有职业精神，直播时间长、更新快，即使输了游戏也不会说脏话，还会提前向粉丝说明拖更原因，深受粉丝喜爱，截至2024年10月29日，其抖音账号粉丝量达904.3万，获赞量1.7亿.
+                .8万 。他是王者荣耀五国服同时在榜元歌，也是全网第一个两万分元歌，曾用元歌上过巅峰赛第一. 2021年，桑杰与听安共同创建王者荣耀花果山战队，并出任队长，后队长位置由听安担任. 桑杰直播风格风趣幽默，给很多英雄都起了外号，还常与队友相爱相杀，节目效果拉满，并且三观正，积极引导粉丝，不搞剧本不蹭热度，曾将单挑赢的几万块当场捐出，被评价为“至少目前来说是直播四年没黑历史的主播”.</p>
+            </div>
+          </li>
+        
+        </ul>
+    </div>
+  </div>
+
+  <!-- 6Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about-us">
+        <h3>关于我们</h3>
+        <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+      </div>
+      <div class="footer-section contact-us">
+        <h3>联系我们</h3>
+        <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+        <ul>
+          <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+          <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+        </ul>
+      </div>
+      <div class="footer-section follow-us">
+        <h3>关注我们</h3>
+        <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-section copyright">
+        <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

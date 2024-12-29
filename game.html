@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+         .hot {
+            /* margin-top: 60px; */
+            margin: 100px auto;
+           
+        }
+        .hot h2{
+             text-align: center;
+            font-family: 'ttf3';
+            color: red;
+            font-size: 30px;
+            border-radius: 10px 10px 0 0;
+            background-image: linear-gradient(to right, red,blue);
+            margin-bottom: 40px;
+        }
+        .hot-list ul{
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .hot-list ul li{
+            margin: 10px;
+            width: 250px;
+            height: 100px;
+            margin-bottom: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+     <!-- 1顶层导航 -->
+     <div class="nav">
+        <div class="info container">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+            <div class="content">
+                <ul class="topsec">
+                    <li class="sec"><a href="index.html">首页</a></li>
+                    <li class="sec">
+                        <div>
+                            <a href="">游戏中心</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="">热门游戏</a></li>
+                            <li><a href="">角色扮演</a></li>
+                            <li><a href="">塔防</a></li>
+                            <li><a href="">悠闲</a></li>
+                            <li><a href="">卡牌</a></li>
+                        
+                        </ul>
+                    </li>
+                    <li class="sec">
+                        <div>
+                            <a href="">文化社区</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="wanzhe.html">王者荣耀</a></li>
+                            <li><a href="">和平精英</a></li>
+                            <li><a href="">洛克王国</a></li>
+                            <li><a href="">逃跑吧少年</a></li>
+                            <li><a href="">原神</a></li>
+                        
+                        </ul>
+                    </li>
+                    <script>
+                        $('.sec').hover(function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideDown();
+                          
+                        }, function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideUp();
+                            });
+                            
+                            
+                    </script>
+                    
+                    <li class="sec"><a href="game.html">创作者计划</a></li>
+                    <li class="sec"><a href="mygame.html">我的游戏</a></li>
+                </ul>
+            </div>
+            <div class="login"><a href="login.html">登录</a>
+            </div>
+            <div class="download"><button>下载客户端</button></div>
+        </div>
+    </div>
+      <!-- 2游戏 -->
+      <div class="container hot">
+        <h2>创造者计划</h2>
+        <div class="hot-list">
+            <ul>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/tcs.html" target="_blank">贪吃蛇(作者：Tomba)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/elsfk.html" target="_blank">俄罗斯方块(作者：Aiden)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/hcrld.html" target="_blank">火柴人乱斗(作者：Emma)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/lx.html" target="_blank">流星(作者：Sophia)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+       
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/lyb.html" target="_blank">留言板(作者：Tomba)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/elsfk.html" target="_blank">俄罗斯方块(作者：Aiden)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/hcrld.html" target="_blank">火柴人乱斗(作者：Emma)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="bo">
+                        <div class="js"><a href="games/lx.html" target="_blank">流星(作者：Sophia)</a></div>
+                        <button>下载</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        $(".hot li").hover(function () {
+            $(this).find(".mask").stop();
+            $(this).find(".mask").slideDown(200);
+        }, function () {
+            $(this).find(".mask").stop();
+            $(this).find(".mask").slideUp(200);
+        });
+    </script>
+     <!-- 6Footer -->
+     <footer>
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <h3>关于我们</h3>
+                <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>联系我们</h3>
+                <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+                    <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section follow-us">
+                <h3>关注我们</h3>
+                <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

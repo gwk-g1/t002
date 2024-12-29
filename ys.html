@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/ys.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-image: linear-gradient(#e66465, #9198e5);
+        }
+
+        .header {
+            margin-top: 70px;
+        }
+
+        .ys-title {
+            text-align: center;
+            height: 70px;
+            line-height: 70px;
+            background-color: pink;
+            padding: 10px;
+            margin: 40px;
+            font-family: 'ttf4';
+            font-size: 40px;
+           
+        }
+
+        .ys-title span.tit-span {
+            display: inline-block;
+            width: 44px;
+            height: 66px;
+        }
+
+        .ys-title span.tit-span img {
+            width: 44px;
+            height: 66px;
+        }
+
+        .ys-title .tit-center {
+            /* display: inline-block;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+            height: 66px;
+            line-height: 66px; */
+            margin: 0 auto;
+            background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(30deg, #e66465, #9198e5);
+        }
+
+        .ys-title .center {
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            width: 400px;
+        }
+
+        .header img {
+            width: 1200px;
+            height: 500px;
+        }
+
+        /* 2topvideo */
+        /* 3 */
+    </style>
+
+</head>
+
+<body>
+    <!-- 1顶层导航 -->
+    <div class="nav">
+        <div class="info container">
+            <div class="logo"><a href=""><img src="img/logo.png" alt=""></a></div>
+            <div class="content">
+                <ul class="topsec">
+                    <li class="sec"><a href="index.html">首页</a></li>
+                    <li class="sec">
+                        <div>
+                            <a href="">游戏中心</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="">热门游戏</a></li>
+                            <li><a href="">角色扮演</a></li>
+                            <li><a href="">塔防</a></li>
+                            <li><a href="">悠闲</a></li>
+                            <li><a href="">卡牌</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sec">
+                        <div>
+                            <a href="">文化社区</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="wanzhe.html">王者荣耀</a></li>
+                            <li><a href="">和平精英</a></li>
+                            <li><a href="">洛克王国</a></li>
+                            <li><a href="">逃跑吧少年</a></li>
+                            <li><a href="">原神</a></li>
+
+                        </ul>
+                    </li>
+                    <script>
+                        $('.sec').hover(function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideDown();
+
+                        }, function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideUp();
+                        });
+
+
+                    </script>
+
+                    <li class="sec"><a href="game.html">创作者计划</a></li>
+                    <li class="sec"><a href="mygame.html">我的游戏</a></li>
+                </ul>
+            </div>
+            <div class="login"><a href="login.html">登录</a>
+            </div>
+            <div class="download"><button>下载客户端</button></div>
+        </div>
+    </div>
+    <!-- 2动图 -->
+    <div class="topvideo">
+        <video src="video/video_ys.mp4" width="100%" autoplay loop muted></video>
+    </div>
+    <script>
+        document.querySelector('.topvideo video').addEventListener('click', function () {
+            this.controls = this.controls ? false : true;
+        });
+    </script>
+    <!-- 3 -->
+    <div class="header container">
+        <h1 class="ys-title">
+            <div class="center">
+                <span class="tit-span">
+                    <img src="mm/public-icon3 (1).png" alt="">
+                </span>
+                <div class="tit-center">
+                    原神之旅，即刻起航
+                </div>
+                <span class="tit-span">
+                    <img src="mm/public-icon4.png" alt="">
+                </span>
+            </div>
+        </h1>
+        <img src="mm/ys-header.jpg" alt="">
+    </div>
+    <!-- 4角色 -->
+    <div class="role container">
+        <h1 class="ys-title">
+            <div class="center">
+                <span class="tit-span">
+                    <img src="mm/public-icon3 (1).png" alt="">
+                </span>
+                <div class="tit-center">
+                    角色
+                </div>
+                <span class="tit-span">
+                    <img src="mm/public-icon4.png" alt="">
+                </span>
+            </div>
+        </h1>
+        <div class="r-tab">
+            <ul>
+                <li class="tab-h" data-id="h"></li>
+                <li class="tab-s" data-id="s"></li>
+                <li class="tab-f" data-id="f"></li>
+                <li class="tab-l" data-id="l"></li>
+                <li class="tab-c" data-id="c"></li>
+                <li class="tab-b" data-id="b"></li>
+                <li class="tab-y" data-id="y"></li>
+
+            </ul>
+        </div>
+        <div class="r-content">
+            <ul>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(10).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(11).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(12).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(13).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(14).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(15).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(16).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="h">
+                    <img src="mm/role(17).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="s">
+                    <img src="mm/role(21).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="s">
+                    <img src="mm/role(22).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+
+
+                <li class="r-item" data-id="f">
+                    <img src="mm/role(31).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="f">
+                    <img src="mm/role(32).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="f">
+                    <img src="mm/role(33).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="f">
+                    <img src="mm/role(34).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="f">
+                    <img src="mm/role(35).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="f">
+                    <img src="mm/role(36).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+
+                <li class="r-item" data-id="l">
+                    <img src="mm/role(41).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="l">
+                    <img src="mm/role(42).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="l">
+                    <img src="mm/role(43).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+
+                <li class="r-item" data-id="c">
+                    <img src="mm/role(51).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+
+                <li class="r-item" data-id="b">
+                    <img src="mm/role(61).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="b">
+                    <img src="mm/role(62).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="b">
+                    <img src="mm/role(63).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="b">
+                    <img src="mm/role(64).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="b">
+                    <img src="mm/role(65).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="b">
+                    <img src="mm/role(66).jpeg" alt="">
+                    <p>达达利亚</p>
+                </li>
+
+
+                <li class="r-item" data-id="y">
+                    <img src="mm/role(71).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="y">
+                    <img src="mm/role(72).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="y">
+                    <img src="mm/role(73).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+                <li class="r-item" data-id="y">
+                    <img src="mm/role(74).jpg" alt="">
+                    <p>达达利亚</p>
+                </li>
+
+
+            </ul>
+        </div>
+        <script>
+            $('.r-tab ul li').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                var id = $(this).data('id');
+                $('.r-content ul li').hide();
+                $('.r-content ul li[data-id=' + id + ']').stop();
+                $('.r-content ul li[data-id=' + id + ']').fadeIn();
+
+            });
+            for (let i = 0; i < $('.r-tab ul li').length; i++) {
+                $('.r-tab ul li').eq(i).css({ background: `url(../mm/ys-ico.png) no-repeat ${-15 - i * 190}px -1px` })
+            }
+        </script>
+
+    </div>
+    <!-- 5人物cos -->
+    <div class="cos container">
+        <h1 class="ys-title">
+            <div class="center">
+                <span class="tit-span">
+                    <img src="mm/public-icon3 (1).png" alt="">
+                </span>
+                <div class="tit-center">
+                    人物cos
+                </div>
+                <span class="tit-span">
+                    <img src="mm/public-icon4.png" alt="">
+                </span>
+            </div>
+        </h1>
+        <ul class="cos-list">
+            <li>
+                <img src="mm/ys_cos(4).webp" alt="">
+                <h4>神里绫华</h4>
+            </li>
+            <li>
+                <img src="mm/ys_cos(1).webp" alt="">
+                <h4>优菈</h4>
+            </li>
+            <li>
+                <img src="mm/ys_cos(2).webp" alt="">
+                <h4>芭芭拉</h4>
+            </li>
+            <li>
+                <img src="mm/ys_cos(3).webp" alt="">
+                <h4>宵宫</h4>
+            </li>
+        </ul>
+    </div>
+    <!-- 6热门角色 -->
+    <div class="hot-role container">
+        <h1 class="ys-title">
+            <div class="center">
+                <span class="tit-span">
+                    <img src="mm/public-icon3 (1).png" alt="">
+                </span>
+                <div class="tit-center">
+                    热门角色
+                </div>
+                <span class="tit-span">
+                    <img src="mm/public-icon4.png" alt="">
+                </span>
+            </div>
+        </h1>
+        <ul class="hot-list">
+            <li><img src="mm/hot-role(1).jpg" alt=""></li>
+            <li><img src="mm/hot-role(2).jpg" alt=""></li>
+            <li><img src="mm/hot-role(3).jpg" alt=""></li>
+            <li><img src="mm/hot-role(4).jpg" alt=""></li>
+        </ul>
+    </div>
+    <!-- 7卡通壁纸 -->
+    <div class="kt container">
+        <h1 class="ys-title">
+            <div class="center">
+                <span class="tit-span">
+                    <img src="mm/public-icon3 (1).png" alt="">
+                </span>
+                <div class="tit-center">
+                    卡通壁纸
+                </div>
+                <span class="tit-span">
+                    <img src="mm/public-icon4.png" alt="">
+                </span>
+            </div>
+        </h1>
+        <ul class="kt-list">
+            <li><img src="mm/dm (1).jpg" alt=""></li>
+            <li><img src="mm/dm (2).jpg" alt=""></li>
+            <li><img src="mm/dm (3).jpg" alt=""></li>
+            <li><img src="mm/dm(4).webp" alt=""></li>
+        </ul>
+    </div>
+    <!-- 8人物故事 -->
+    <div class="story container">
+        <h1 class="ys-title">
+            <div class="center">
+                <span class="tit-span">
+                    <img src="mm/public-icon3 (1).png" alt="">
+                </span>
+                <div class="tit-center">
+                    人物故事
+                </div>
+                <span class="tit-span">
+                    <img src="mm/public-icon4.png" alt="">
+                </span>
+            </div>
+        </h1>
+        <div class="story-list">
+            <details>
+                <summary>纳西妲</summary>
+                <p>纳西妲是《原神》中的 5 星草系法器角色，作为草神，她在游戏中有着独特的地位和重要作用.
+                    从形象上看，她是一位萝莉体型的角色，有着绿色的头发和眼睛，头戴小巧王冠，身着白绿相间服饰，背后还有透明翅膀，造型清新纯真.
+                    纳西妲的技能机制强大，元素战技 “所闻遍计” 可对敌人造成草元素伤害并附加蕴种印，长按还有抗打断能力，且每隔 2.5 秒触发灭净三业攻击；元素爆发 “心景幻成”
+                    在摩耶之殿中时，不同元素可带来不同效果.
+                    她的配队极其灵活且成本较低，如 “草行久” 配队是提瓦特 T0 级别的存在，此外还有多种配队方式能适应不同场景.
+                    在培养方面，纳西妲的圣遗物草套获取容易，武器选择丰富，四星的祭礼残章、流浪乐章等及一些锻造武器都可使用.
+                    纳西妲的定位是后台持续输出型角色兼优秀辅助，能为队伍提供稳定草元素伤害、挂草效果和元素精通加成，无论是在激化队、绽放队等元素反应队伍中，都能大幅提升队伍的输出能力和反应效率.</p>
+            </details>
+            <details>
+                <summary>钟离</summary>
+                <p>钟离是《原神》中极具魅力的角色。
+                    他是璃月港的神秘客卿，外貌英俊，气质高雅，有着一头褐色长发和温润的双眸。身着典雅长袍，举手投足间尽显古朴威严。
+                    从身份来讲，钟离实则是岩神摩拉克斯。他历经漫长岁月，见证无数变迁。他的性格沉稳、淡漠世事，仿佛世间万物都难以掀起他内心的波澜。不过偶尔也会流露出对凡人琐事的兴趣。
+                    在战斗方面，钟离实力强大。他的技能可以创造护盾，护盾强度颇高，能有效吸收伤害，为队友提供可靠的保护。他的岩脊等岩造物能用于攀爬、阻挡敌人攻击路线，还可以配合其他元素打出结晶反应。他的大招具有强大的控制效果，能够石化敌人，为战斗创造良好的输出环境。
+                    在剧情里，钟离知晓璃月诸多往事，宛如一部行走的历史书。他的故事线贯穿璃月主线剧情，无论是与璃月七星的暗中协作，还是对璃月港传统的坚守，都展现出他对璃月深沉的情感和守护的决心。</p>
+            </details>
+            <details>
+                <summary>刻晴</summary>
+                <p>刻晴是《原神》中璃月七星之玉衡星，生日为 11 月 20 日，称号霆霓快雨. 以下是对她的具体介绍：
+                    外貌气质：刻晴的服饰以紫色为主色调，简洁而不失华丽，手中的单手剑象征着她的果断与坚定。她常保持着严肃认真的神情，透露出一种干练与优雅并存的气质.
+                    性格特点：刻晴是个十足的行动派，只要她认为有价值的事就会亲力亲为。她坚信人类的命运应由人类自己主宰，对 “帝君一言而决的璃月” 颇有微词，甚至敢于质疑岩王帝君，是离神最近却又最缺乏敬畏心的人之一.
+                    角色能力：作为雷元素单手剑角色，刻晴的元素战技 “星斗归位” 可让她瞬间移动至敌人身旁并释放雷电攻击，长按还能跨越地形。其元素爆发 “天街巡游”
+                    能在瞬间对周围敌人造成大范围雷电伤害，且在释放大招期间自身处于无敌状态 .
+                    角色故事：出身名门望族的刻晴，深刻认识到岩王帝君对璃月人民的影响。她勇敢质疑社会的运转方式，在请仙典仪上发出惊人言论。帝君离去后，刻晴意识到自身不足，闭门苦学，最终摒弃对抗意识，与凝光等携手为璃月的人治时代努力.
+                </p>
+            </details>
+            <details>
+                <summary>芙宁娜</summary>
+                <p>
+                    芙宁娜是《原神》中枫丹的水神，魔神名芙卡洛斯，于2023年11月8日随4.2版本“罪人舞步旋”上线.以下是对她的具体介绍：
+                    -
+                    **形象与性格**：芙宁娜的形象设计独特，以蓝色为主色调搭配白色装饰，发型为长长的卷发，兼具优雅与俏皮。她性格鲜明，热爱表演、喜欢热闹，言行举止带有夸张和戏剧性元素，审判时会摆出夸张姿势、发表激昂言论，将审判现场变成表演舞台.
+                    -
+                    **角色能力**：作为辅助型角色，芙宁娜的元素战技可召唤沙龙成员或众水的歌者，为队友提供加成效果；元素爆发能凝聚狂欢之意，提升队友伤害和治疗加成。她还可切换始基力属性应对不同战斗场景，如芒性属性可提供治疗和护盾，荒性属性可提升伤害输出.
+                    - **背景故事**：她是纯水精灵转化而来，为应对前代水神厄歌莉娅的预言危机，将神格和人格分离，以人格“芙宁娜·德·枫丹”扮演水神欺骗天理，最终在揭示真相后将神力交给那维莱特.
+                </p>
+            </details>
+        </div>
+    </div>
+    <!-- 阵容搭配，角色台词，角色皮肤 -->
+    <!-- 6Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <h3>关于我们</h3>
+                <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>联系我们</h3>
+                <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+                    <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section follow-us">
+                <h3>关注我们</h3>
+                <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

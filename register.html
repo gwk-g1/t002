@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script>
+        function changeCode() {
+          var can = document.getElementById("can");
+          drawCode(can);
+        }
+        window.onload = changeCode;
+      </script>
+    <style>
+        canvas{ 
+            border: 1px solid green; 
+            cursor: pointer;
+
+        }
+
+        body {
+            /* background-image: linear-gradient(#e66465, #9198e5); */
+            /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+            /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
+            /* background-image: radial-gradient(red, yellow, green); */
+            background-image: radial-gradient(red, black);
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+            margin-left: 100px;
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=tel],
+        input[type=email] {
+            width: 300px;
+            height: 20px;
+            margin-right: 30px;
+            outline: none;
+            padding-left: 5px;
+        }
+        #check {
+            width: 120px;
+            height: 20px;
+            margin-right: 30px;
+            outline: none;
+            padding-left: 5px;
+            margin-left: 100px;
+        }
+        input[type=submit],
+        input[type=reset] {
+            width: 100px;
+            height: 30px;
+            background-color: #e66465;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .box {
+            margin: 30px auto;
+        }
+        input[type=submit]{
+            margin-left: 100px;
+            margin-right: 200px;
+        }
+        .box a{
+            /* display: block; */
+            margin-left: 20px;
+        }
+
+        input[type=submit]:hover,
+        input[type=reset]:hover {
+            background-color: #f44848;
+        }
+
+        section.register {
+            width: 800px;
+        }
+
+        .red {
+            color: red;
+            background: url(img/error.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .green {
+            color: green;
+            background: url(img/right.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .fa {
+            margin: 80px auto;
+            width: 800px;
+            background: url(img/bird.jpg) no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1顶层导航 -->
+    <div class="nav">
+        <div class="info container">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+            <div class="content">
+                <ul class="topsec">
+                    <li class="sec"><a href="index.html">首页</a></li>
+                    <li class="sec">
+                        <div>
+                            <a href="">游戏中心</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="">热门游戏</a></li>
+                            <li><a href="">角色扮演</a></li>
+                            <li><a href="">塔防</a></li>
+                            <li><a href="">悠闲</a></li>
+                            <li><a href="">卡牌</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sec">
+                        <div>
+                            <a href="">文化社区</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="">王者荣耀</a></li>
+                            <li><a href="">和平精英</a></li>
+                            <li><a href="">洛克王国</a></li>
+                            <li><a href="">逃跑吧少年</a></li>
+                            <li><a href="">原神</a></li>
+
+                        </ul>
+                    </li>
+                    <script>
+                        $('.sec').hover(function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideDown();
+
+                        }, function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideUp();
+                        });
+
+
+                    </script>
+
+                    <li class="sec"><a href="game.html">创作者计划</a></li>
+                    <li class="sec"><a href="mygame.html">我的游戏</a></li>
+                </ul>
+            </div>
+            <div class="login"><a href="login.html">登录</a>
+
+            </div>
+            <div class="download"><button>下载客户端</button></div>
+        </div>
+    </div>
+    <!-- 登录 -->
+    <script>
+        document.querySelector(".login a").innerHTML = localStorage.getItem("username") || "登录";
+    </script>
+    <div class="fa">
+        <section class="register">
+            <h3>填写注册信息</h3>
+            <form action="">
+                <fieldset>
+                    <legend>表单注册信息</legend>
+                    <p>
+                        <label for="">用户名：</label>
+                        <input type="text" class="username" placeholder="长度4~12位，大小写字母">
+                        <span><i>*</i>必填</span>
+                    </p>
+                    <p>
+                        <label for="">密码：</label>
+                        <input type="password" class="pwd" placeholder="长度6~20位，大小写字母">
+                        <span><i>*</i>必填</span>
+                    </p>
+                    <p>
+                        <label for="">确认密码：</label>
+                        <input type="password" class="repwd" placeholder="长度6~20位，大小写字母">
+                        <span><i>*</i>必填</span>
+                    </p>
+                    <p>
+                        <label for="">手机号：</label>
+                        <input type="tel" class="tel" placeholder="13 14 15 17 18开头的11为手机号">
+                        <span><i>*</i>必填</span>
+                    </p>
+                    <p>
+                        <label for="">邮箱：</label>
+                        <input type="email" class="email" placeholder="用户名@域名">
+                        <span><i>*</i>必填</span>
+                    </p>
+                    <div class="box">
+                        <input type="text" id="check" placeholder="输入验证码">
+                        <canvas width="120" height="40" id="can" onclick="changeCode()"></canvas>
+                        <a href="" onclick="changeCode()">看不清换一张</a>
+                    </div>
+                    <p>
+                        <input type="submit" value="注册" class="zhuce">
+                        <input type="reset" class="reset">
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+        <script>
+            //获取所有input
+            let inputs = document.querySelectorAll('input')
+            // let userReg = /^[a-zA-Z]{4,12}$/;
+
+            // let username = document.querySelector('.username');
+
+            //调用函数
+            checkItem(inputs[0], /^[a-zA-Z]{4,12}$/)
+            checkItem(inputs[1], /^\w{6,20}$/)
+            checkItem(inputs[3], /^1[34578]\d{9}$/)
+            checkItem(inputs[4],/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)
+            checkPwd(inputs[2], inputs[1])
+
+            let pass = 0;
+
+
+
+            //定义函数——验证用户名、密码、手机号、邮箱等等的格式
+            function checkItem(obj, reg) {
+                //判断用户名
+                obj.addEventListener('blur', function () {
+                    if (!obj.value.trim()) {
+                        error(obj)
+                        return false
+                    }
+                    else {
+                        if (reg.test(obj.value)) {
+                            this.nextElementSibling.classList.remove('red');
+                            this.nextElementSibling.classList.add('green');
+                            this.nextElementSibling.innerHTML = '格式正确'
+                            pass = 1
+                        } else {
+                            this.nextElementSibling.classList.remove('green');
+                            this.nextElementSibling.classList.add('red');
+                            this.nextElementSibling.innerHTML = obj.placeholder
+                            this.focus()
+                            pass = 0
+                        }
+                    }
+                })
+            }
+            function error(obj) {//判断空
+                obj.nextElementSibling.classList.add('red');
+                obj.nextElementSibling.innerHTML = '不能为空'
+                obj.focus()
+            }
+            function checkPwd(obj, pre) {
+                obj.addEventListener('blur', function () {
+                    if (!obj.value.trim()) {
+                        error(obj)
+                        return false
+                    }
+                    let pwdReg = RegExp('^' + pre.value + '$')
+                    if (pwdReg.test(obj.value)) {
+                        this.nextElementSibling.classList.remove('red');
+                        this.nextElementSibling.classList.add('green');
+                        this.nextElementSibling.innerHTML = '格式正确'
+                    } else {
+                        this.nextElementSibling.classList.remove('green');
+                        this.nextElementSibling.classList.add('red');
+                        this.nextElementSibling.innerHTML = obj.placeholder
+                        this.focus()
+                    }
+
+                })
+
+            }
+            document.querySelector('.zhuce').addEventListener('click', function (e) {
+                if (pass === 1) {
+                    alert('恭喜注册表单成功')
+                } else {
+                    alert('请正确填写注册信息！')
+                    e.preventDefault()
+                    pass = 0;
+                }
+            })
+            document.querySelector('.reset').addEventListener('click', function () {
+                //刷新页面
+                window.location.reload()
+                //跳转页面
+                // window.location.href='https://www.baidu.com';
+            })
+        </script>
+
+    </div>
+    
+  <script>
+    function drawCode(canvas) {
+      //1.新建一个函数产生随机数
+      function rn(min,max){
+        return  parseInt(Math.random() * (max-min) + min);
+      }
+
+      //2.新建一个函数产生随机颜色
+      function rc(min,max){
+        var r = rn(min,max);
+        var g = rn(min,max);
+        var b = rn(min,max);
+        return `rgb(${r},${g},${b})`;
+      }
+      //3.填充背景颜色(颜色浅一些）
+      var w = 120;
+      var h = 40;
+      let can = document.getElementById('can');
+      var ctx = can.getContext("2d");
+      ctx.fillStyle = rc(180,230);
+      ctx.fillRect(0,0,w,h);
+
+      //4.随机产生字符串
+      var pool = "ABCDEFGHIJKLIMNOPQRSTUVWSYZ1234567890";
+      for(var i=0; i<4; i++){
+          var c = pool[rn(0,pool.length)];  //随机的字
+          var fs = rn(20, 45);  //字体的大小
+          var deg = rn(-30, 30);  //字体的旋转角度
+          ctx.font = fs + 'px Simhei';
+          ctx.textBaseline = "top";
+          ctx.fillStyle = rc(80, 150);
+          ctx.save();
+          ctx.translate(30*i+15, 15);
+          ctx.rotate(deg * Math.PI/180);
+          ctx.fillText(c, -15+5, -15);
+          ctx.restore();
+      }
+
+      //5.随机产生6条干扰线,干扰线的颜色要浅一点
+      for(var i=0; i<6; i++){
+        ctx.beginPath();
+        ctx.moveTo(rn(0,w), rn(0,h));
+        ctx.lineTo(rn(0,w), rn(0,h));
+        ctx.strokeStyle = rc(180,230);
+        ctx.closePath();
+        ctx.stroke();
+      }
+      //6.随机产生40个干扰的小点
+      for(var i=0; i<40; i++){
+        ctx.beginPath();
+        ctx.arc(rn(0,w), rn(0,h), 1, 0, 2*Math.PI);
+        ctx.closePath();
+        ctx.fillStyle = rc(150,200);
+        ctx.fill();
+      }
+    }
+    //验证码 随机的数、颜色、倾斜、大小、文字颜色、干扰线、雨点
+  </script>
+
+    <!-- 6Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <h3>关于我们</h3>
+                <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>联系我们</h3>
+                <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+                    <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section follow-us">
+                <h3>关注我们</h3>
+                <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

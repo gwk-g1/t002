@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="js/t006.js"></script>
+    <link rel="stylesheet" href="css/t006.css">
+    <style>
+        .hot {
+            margin-top: 100px;
+        }
+        .hot h2{
+            margin: 60px auto;
+            font-family: 'ttf3';
+            color: red;
+            font-size: 30px;
+            border-radius: 10px 10px 0 0;
+            background-image: linear-gradient(to right, red,blue);
+        }
+        .details h2{
+            margin: 30px auto;
+            text-align: center;
+            font-family: 'ttf3';
+            color: red;
+            font-size: 30px;
+            border-radius: 10px 10px 0 0;
+            background-image: linear-gradient(to right, red,blue);
+          }
+          .details {
+            margin-bottom: 40px;
+            background-color: #111;
+          }
+
+        .hot-list ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hot-list ul li {
+            width: 250px;
+            height: 380px;
+            border: #ccc solid 2px;
+            box-shadow: 0 0 10px #c90a0a;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .swiper {
+            width: 600px;
+            height: 300px;
+            padding: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 600px;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 300px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <!-- 1顶层导航 -->
+    <div class="nav">
+        <div class="info container">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+            <div class="content">
+                <ul class="topsec">
+                    <li class="sec"><a href="index.html">首页</a></li>
+                    <li class="sec">
+                        <div>
+                            <a href="">游戏中心</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="">热门游戏</a></li>
+                            <li><a href="">角色扮演</a></li>
+                            <li><a href="">塔防</a></li>
+                            <li><a href="">悠闲</a></li>
+                            <li><a href="">卡牌</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sec">
+                        <div>
+                            <a href="">文化社区</a>
+                            <span class="iconfont">&#xe859;</span>
+                        </div>
+                        <!-- 二级菜单 -->
+                        <ul class="secnav">
+                            <li><a href="wanzhe.html">王者荣耀</a></li>
+                            <li><a href="">和平精英</a></li>
+                            <li><a href="">洛克王国</a></li>
+                            <li><a href="">逃跑吧少年</a></li>
+                            <li><a href="">原神</a></li>
+
+                        </ul>
+                    </li>
+                    <script>
+                        $('.sec').hover(function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideDown();
+
+                        }, function () {
+                            $(this).find('.secnav').stop();
+                            $(this).find('.secnav').slideUp();
+                        });
+
+
+                    </script>
+
+                    <li class="sec"><a href="game.html">创作者计划</a></li>
+                    <li class="sec"><a href="mygame.html">我的游戏</a></li>
+                </ul>
+            </div>
+            <div class="login"><a href="login.html">登录</a>
+            </div>
+            <div class="download"><button>下载客户端</button></div>
+        </div>
+    </div>
+
+    <!-- 2我的游戏 -->
+    <div class="container hot">
+        <h2>我喜欢的游戏</h2>
+        <div class="hot-list">
+            <ul>
+                <li>
+                    <img src="uploads/hp.png" alt="">
+                    <div class="bo">
+                        <div class="js">和平精英</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">《和平精英》是腾讯光子工作室群自研打造的战术竞技类手机游戏，于2019年5月8日正式公开测试.
+                        玩家在多张实景还原地图中扮演特种兵，通过跳伞进入游戏地图，收集武器、装备等资源，与其他特种兵较量，可通过击倒、击杀等方式淘汰对手，最终存活的特种兵所在小队获胜.
+                        游戏具有精美的画面、真实的射击手感，还有多种地图、丰富的模式和特色玩法，团队合作至关重要，同时它也是一个社交平台，玩家可在此结识朋友，交流心得.
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/wz.jpeg" alt="">
+                    <div class="bo">
+                        <div class="js">王者荣耀</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《王者荣耀》是一款极具影响力的多人在线竞技手游。通过摧毁对方的水晶来获取胜利。游戏不仅考验个人操作技巧，更注重团队协作与策略规划，包括英雄的选择搭配、兵线的运营推进、野怪的控制等诸多环节。同时，《王者荣耀》还拥有精美的皮肤系统，能让英雄们换上风格多样的外观，无论是霸气威武的机甲造型，还是清新可爱的童话风格，都为玩家带来丰富的视觉体验。并且，官方会定期更新游戏内容，推出新英雄、新皮肤和新玩法，让游戏始终保持新鲜感和吸引力。
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/ys.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">原神</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《原神》是由米哈游开发的一款开放世界冒险角色扮演游戏，于2020年9月28日公测并全球同步上线.游戏发生在名为“提瓦特”的幻想世界，被神选中的人会被授予“神之眼”以导引元素之力，玩家扮演的旅行者将在此寻找失散的亲人.游戏有开放世界探索、角色养成与抽卡、元素战斗等丰富玩法，玩家可操控不同属性角色进行战斗，利用元素反应提升效率，还能通过抽卡等收集角色和武器来提升实力.其画面精美，采用卡通风格渲染，剧情丰富，凭借独特设定和玩法在全球吸引了大量玩家，并获得多个奖项.
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/nsh.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">逆水寒</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《逆水寒》是由杭州网易雷火科技有限公司开发运营的武侠题材网络游戏，于2018年6月29日开启不限号不删档内测
+                        。游戏主线围绕北宋末年的血腥大追捕展开，展现了江湖恩怨、朝堂纷争、市井百态等生活画卷.《逆水寒》采用时间点卡收费模式，拥有半锁定的即时战斗系统，玩家可自由选择职业和角色属性，通过多种方式提升角色技能，并可参与探索、生活、奇遇等特色玩法.该游戏以其精美的画面、丰富的剧情和深度的玩法，获得了2019年和2021年的金翎奖年度玩家最喜爱的网络游戏等多项荣誉.
+
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/tp.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">逃跑吧少年</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《逃跑吧少年》是一款由深圳抱一网络科技有限公司研发的非对称对抗类多人在线休闲竞技手游，于 2018 年 8 月 3 日正式发布.
+                        游戏中玩家可扮演追捕者或逃生者，逃生者需相互配合破译保险柜获取钥匙以开启大门逃离，而追捕者则要阻止逃生者逃离. 该游戏具有以下特点：一是画面清晰细腻，Q
+                        版角色萌趣可爱，操作流畅易上手；二是拥有丰富多样的挑战模式，如 1V4、2V8、20 人生存大乱斗及 1V5 BOSS
+                        战等；三是道具系统独特，各种脑洞大开的道具组合增加了游戏的趣味性和策略性.
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/wz.jpeg" alt="">
+                    <div class="bo">
+                        <div class="js">王者荣耀</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《王者荣耀》是一款极具影响力的多人在线竞技手游。通过摧毁对方的水晶来获取胜利。游戏不仅考验个人操作技巧，更注重团队协作与策略规划，包括英雄的选择搭配、兵线的运营推进、野怪的控制等诸多环节。同时，《王者荣耀》还拥有精美的皮肤系统，能让英雄们换上风格多样的外观，无论是霸气威武的机甲造型，还是清新可爱的童话风格，都为玩家带来丰富的视觉体验。并且，官方会定期更新游戏内容，推出新英雄、新皮肤和新玩法，让游戏始终保持新鲜感和吸引力。
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/ys.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">原神</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《原神》是由米哈游开发的一款开放世界冒险角色扮演游戏，于2020年9月28日公测并全球同步上线.游戏发生在名为“提瓦特”的幻想世界，被神选中的人会被授予“神之眼”以导引元素之力，玩家扮演的旅行者将在此寻找失散的亲人.游戏有开放世界探索、角色养成与抽卡、元素战斗等丰富玩法，玩家可操控不同属性角色进行战斗，利用元素反应提升效率，还能通过抽卡等收集角色和武器来提升实力.其画面精美，采用卡通风格渲染，剧情丰富，凭借独特设定和玩法在全球吸引了大量玩家，并获得多个奖项.
+                    </div>
+                </li>
+                <li>
+                    <img src="uploads/nsh.jpg" alt="">
+                    <div class="bo">
+                        <div class="js">逆水寒</div>
+                        <button>下载</button>
+                    </div>
+                    <div class="mask">
+                        《逆水寒》是由杭州网易雷火科技有限公司开发运营的武侠题材网络游戏，于2018年6月29日开启不限号不删档内测
+                        。游戏主线围绕北宋末年的血腥大追捕展开，展现了江湖恩怨、朝堂纷争、市井百态等生活画卷.《逆水寒》采用时间点卡收费模式，拥有半锁定的即时战斗系统，玩家可自由选择职业和角色属性，通过多种方式提升角色技能，并可参与探索、生活、奇遇等特色玩法.该游戏以其精美的画面、丰富的剧情和深度的玩法，获得了2019年和2021年的金翎奖年度玩家最喜爱的网络游戏等多项荣誉.
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 4展示 -->
+    <div class="container details">
+        <h2>我收藏的游戏</h2>
+        <div class="fa">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(1).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(2).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(3).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(4).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(5).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(6).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(7).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(1).jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(2).jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="uploads/mygame(3).jpeg" />
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "flip",
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+    <script>
+        $(".hot li").hover(function () {
+            $(this).find(".mask").stop();
+            $(this).find(".mask").slideDown(200);
+        }, function () {
+            $(this).find(".mask").stop();
+            $(this).find(".mask").slideUp(200);
+        });
+    </script>
+    <!-- 6Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <h3>关于我们</h3>
+                <p>999游戏助手致力于为广大游戏爱好者提供丰富多样的游戏资源，打造一个便捷、安全、有趣的游戏平台。我们拥有专业的团队，不断努力为用户精选各类优质游戏，并提供完善的游戏下载、安装和管理服务。</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>联系我们</h3>
+                <p>如果您在使用过程中遇到任何问题或有任何建议，欢迎随时与我们联系。</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i>：info@999gamehelper.com</li>
+                    <li><i class="fas fa-phone"></i>：+123 - 456 - 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section follow-us">
+                <h3>关注我们</h3>
+                <p>关注我们的社交媒体账号，获取最新的游戏资讯、活动信息和优惠福利。</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2024 999游戏助手. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
